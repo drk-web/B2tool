@@ -47,12 +47,14 @@
 
         .sections {
             display: flex;
+            flex-wrap: wrap;  /* Assure la responsivité */
             justify-content: space-between;
             margin-bottom: 40px;
         }
 
         .section {
             width: 48%;
+            margin-bottom: 20px; /* Ajout de marges entre les sections */
         }
 
         h2 {
@@ -135,22 +137,84 @@
 
         /* Espacement entre les éléments de la section */
         .section p {
-            margin-bottom: 20px; /* Augmenter l'espacement pour éviter que les liens se mélangent */
+            margin-bottom: 20px;
         }
 
         /* Espacement spécifique pour la deuxième page */
         #page2 .sections .section {
-            margin-top: 30px; /* Ajouter un espacement spécifique entre les sections */
+            margin-top: 30px;
         }
 
         /* Ajouter de l'espace entre les deux sections sur la page 2 */
         #page2 .sections .section:nth-child(odd) {
-            margin-bottom: 30px; /* Espacement entre les deux sections de droite et de gauche */
+            margin-bottom: 30px;
         }
 
         /* Séparer la section Tool Troll Discord (by Drk) en bas des autres */
         #page2 .section-troll {
-            margin-top: 40px; /* Ajouter de l'espace avant la section Tool Troll */
+            margin-top: 40px;
+        }
+
+        /* Responsivité */
+        @media (max-width: 1200px) {
+            .header h1 {
+                font-size: 40px;
+            }
+            .sections {
+                flex-direction: column;  /* Les sections s'empilent sur les petits écrans */
+            }
+            .section {
+                width: 100%;  /* Utiliser toute la largeur pour chaque section */
+            }
+            .discord {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px;
+            }
+            .menu {
+                font-size: 16px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+            .menu {
+                font-size: 14px;
+                padding: 6px;
+            }
+            .discord a {
+                font-size: 16px;
+            }
+            .section {
+                width: 100%;  /* Utiliser toute la largeur pour les sections sur les petits écrans */
+            }
+            .section p {
+                font-size: 16px;  /* Réduire la taille de la police sur les petits écrans */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            .menu {
+                font-size: 14px;
+                padding: 5px;
+            }
+            .discord a {
+                font-size: 14px;
+            }
+            .section p {
+                font-size: 14px;
+            }
+            .discord {
+                bottom: 5px;
+                right: 5px;
+                padding: 5px;
+            }
         }
     </style>
 </head>
@@ -160,7 +224,7 @@
     <div class="menu">
         <a href="#page1">B2 Give (Beta)</a> | 
         <a href="#page2">B2 Tool (Beta)</a> | 
-        <a href="https://discord.gg/VXr2ZTGu" target="_blank">Serveur Discord</a> <!-- Ajout du lien du serveur Discord ici -->
+        <a href="https://discord.gg/VXr2ZTGu" target="_blank">Serveur Discord</a>
     </div>
 
     <!-- Page 1: B2 Give (Beta) -->
@@ -214,3 +278,4 @@
 
 </body>
 </html>
+
