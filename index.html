@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2 Tool (Beta)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://static.vecteezy.com/system/resources/previews/007/938/793/non_2x/black-and-golden-lines-abstract-background-gold-light-luxury-design-modern-futuristic-background-illustration-vector.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+        .content {
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .discord {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .discord a {
+            color: #7289DA;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .discord a:hover {
+            text-decoration: underline;
+        }
+
+        /* Menu */
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Section spécifique du Click here et de la flèche */
+        .click-here {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            font-size: 40px;
+            color: white;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+
+        .arrow:hover {
+            animation: bounce 0.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0) rotate(45deg);
+            }
+            100% {
+                transform: translateY(-10px) rotate(45deg);
+            }
+        }
+
+        /* Navigation via ancre */
+        nav {
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections cachées */
+        .section-content {
+            display: none;
+        }
+
+        /* Pour afficher les sections activées */
+        .section-content:target {
+            display: block;
+        }
+
+        /* Espacement entre les éléments de la section */
+        .section p {
+            margin-bottom: 20px;
+        }
+
+        /* Responsivité */
+        @media (max-width: 1200px) {
+            .header h1 {
+                font-size: 40px;
+            }
+            .sections {
+                flex-direction: column;
+            }
+            .section {
+                width: 100%;
+            }
+            .discord {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px;
+            }
+            .menu {
+                font-size: 16px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+            .menu {
+                font-size: 14px;
+                padding: 6px;
+            }
+            .discord a {
+                font-size: 16px;
+            }
+            .section {
+                width: 100%;
+            }
+            .section p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            .menu {
+                font-size: 14px;
+                padding: 5px;
+            }
+            .discord a {
+                font-size: 14px;
+            }
+            .section p {
+                font-size: 14px;
+            }
+            .discord {
+                bottom: 5px;
+                right: 5px;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="menu">
+        <a href="#page1">B2 Give (Beta)</a> | 
+        <a href="#page2">B2 Tool (Beta)</a> | 
+        <a href="https://discord.gg/VXr2ZTGu" target="_blank">Serveur Discord</a>
+    </div>
+
+    <!-- Page 1: B2 Give (Beta) -->
+    <div id="page1" class="content section-content">
+        <div class="header">
+            <h1>B2 Give (Beta)</h1>
+            <p>script, link and more</p>
+        </div>
+        <div class="sections">
+            <div class="section">
+                <h2>Script Roblox</h2>
+                <p>South Bronx : <a href="https://raw.githubusercontent.com/new-gugus/scouth-broux-neptune/refs/heads/main/main.lua" target="_blank">loadstring(game:HttpGet("https://raw.githubusercontent.com/new-gugus/scouth-broux-neptune/refs/heads/main/main.lua"))()</a></p>
+                <p>School RP : <a href="https://raw.githubusercontent.com/1998e/school-rp/refs/heads/main/neptune%20scripts" target="_blank">loadstring(game:HttpGet("https://raw.githubusercontent.com/1998e/school-rp/refs/heads/main/neptune%20scripts"))()</a></p>
+                <p>GhostHub : <a href="https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub" target="_blank">loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()</a></p>
+            </div>
+            <div class="section">
+                <h2>Executeur Roblox</h2>
+                <p>JJSploit : <a href="https://wearedevs.net/d/JJSploit" target="_blank">https://wearedevs.net/d/JJSploit</a></p>
+                <p>Xeno : <a href="https://github.com/rlz-ve/x/releases/download/v1.1.35/Xeno-v1.1.35-x64.zip" target="_blank">https://github.com/rlz-ve/x/releases/download/v1.1.35/Xeno-v1.1.35-x64.zip</a></p>
+            </div>
+        </div>
+        <div class="discord">
+            <p>Rejoignez notre <a href="https://discord.gg/VXr2ZTGu" target="_blank">serveur Discord</a></p>
+        </div>
+    </div>
+
+    <!-- Page 2: B2 Tool (Beta) -->
+    <div id="page2" class="content section-content">
+        <div class="header">
+            <h1>B2 Tool (Beta)</h1>
+        </div>
+        <div class="sections">
+            <div class="section">
+                <h2>PGP Décrypte</h2>
+                <p><a href="https://8gwifi.org/pgpencdec.jsp" target="_blank">https://8gwifi.org/pgpencdec.jsp</a></p>
+            </div>
+            <div class="section">
+                <h2>Dark Email</h2>
+                <p><a href="https://mail.protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/u/3/inbox?welcome=true" target="_blank">https://mail.protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/u/3/inbox?welcome=true</a></p>
+            </div>
+        </div>
+
+        <!-- Section Tool Troll Discord (by Drk) -->
+        <div class="section-troll">
+            <div class="section">
+                <h2>Tool Troll Discord (by Drk)</h2>
+                <p><a href="https://drk-web.github.io/discord-ban/" target="_blank">https://drk-web.github.io/discord-ban/</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Texte "Click here!" et flèche -->
+    <div class="click-here">Create By B2.</div>
+    <div class="arrow">&#8593;</div>
+
+</body>
+</html>
